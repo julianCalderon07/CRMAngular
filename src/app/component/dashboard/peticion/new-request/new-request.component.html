@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>Agregar petición</h1>
+<div mat-dialog-content>
+    <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Nombre de la petición</mat-label>
+                        <input matInput>
+                        <mat-error>
+                            Peticion es <strong>obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Prioridad de la petición</mat-label>
+                        <mat-select name="prioridad" [(ngModel)]="prioridad" required>
+                            <mat-option value="baja">Baja</mat-option>
+                            <mat-option value="media">Media</mat-option>
+                            <mat-option value="alta">Alta</mat-option>
+                        </mat-select>
+                        <mat-error>
+                            Prioridad es <strong>obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="saveData()">Agregar petición</button>
+    <button mat-button (click)="cancelar()">Cancelar</button>
+</div>
+<ngx-spinner bdColor="rgba(0,35,59,0.5)" size="large" color="#fff" type="ball-scale-multiple" [fullScreen]="true">
+    <p style="color: white"> Cargando... </p>
+</ngx-spinner>
