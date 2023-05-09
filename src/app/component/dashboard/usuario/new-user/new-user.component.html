@@ -1,0 +1,101 @@
+<h1 mat-dialog-title>Agregar usuario</h1>
+<div mat-dialog-content>
+    <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput [formControl]="nombreForm">
+                        <mat-error *ngIf="nombreForm.hasError('required')">
+                            Nombre es <strong>obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Documento</mat-label>
+                        <input matInput [formControl]="documentoForm">
+                        <mat-error *ngIf="documentoForm.hasError('required')">
+                            Documento es <strong>obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Teléfono</mat-label>
+                        <span matPrefix>+57 &nbsp;</span>
+                        <input type="tel" matInput placeholder="3XX XXX XXXX" [formControl]="telefonoForm">
+                        <mat-error *ngIf="telefonoForm.hasError('required')">
+                            Teléfono es <strong>obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput [formControl]="emailForm" placeholder="Ex. pat@example.com">
+                        <mat-error *ngIf="emailForm.hasError('email') && !emailForm.hasError('required')">
+                            Por favor ingrese un Email Valido
+                        </mat-error>
+                        <mat-error *ngIf="emailForm.hasError('required')">
+                            Email es <strong>obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Usuario</mat-label>
+                        <input matInput [formControl]="usuarioSystemForm">
+                        <mat-error *ngIf="usuarioSystemForm.hasError('required')">
+                            Usuario es <strong>obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput [formControl]="contrasenaForm">
+                        <mat-error *ngIf="contrasenaForm.hasError('required')">
+                            Contraseña es <strong>obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Rol</mat-label>
+                        <mat-select [formControl]="idRolForm" name="rol">
+                            <mat-option *ngFor="let rol of rols" [value]="rol.idRol">
+                                {{rol.descripcion}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Tipo Documento</mat-label>
+                        <mat-select [formControl]="idTipoDocumentoForm" name="tipodocumento">
+                            <mat-option *ngFor="let tipo of tipoDocumentos"  [value]="tipo.idTipoDocumento">
+                                {{tipo.descripcion}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onNoClick()">Agregar usuario</button>
+    <button mat-button  cdkFocusInitial>Ok</button>
+</div>
+<ngx-spinner bdColor="rgba(0,35,59,0.5)" size="large" color="#fff" type="ball-scale-multiple" [fullScreen]="true">
+    <p style="color: white"> Cargando... </p>
+</ngx-spinner>

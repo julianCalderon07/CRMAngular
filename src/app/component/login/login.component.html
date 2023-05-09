@@ -1,0 +1,44 @@
+<mat-toolbar>
+    <img width="200" alt="Angular Logo"
+        src="https://recorrido.ucompensar.edu.co/skin/Image_018C49C4_1D5D_33C9_41B8_A70BB6CD663A_es.png?v=1663705559729"
+        style="padding: 10px;" />
+    <span class="example-spacer"></span>
+    <span>CRM Ucompensar</span>
+    <span class="example-spacer"></span>
+</mat-toolbar>
+
+<div class="LoginDiv">
+    <form [formGroup]="form" (ngSubmit)="ingresar()">
+        <mat-spinner *ngIf="loading" diameter="100"></mat-spinner>
+        <div *ngIf="!loading" class="login">
+            <div>
+                <img src="./assets/img/cuenta.png" width="100px">
+                <img src="./assets/img/contrasena.png" width="70px" style="margin-bottom: 0px;margin-left: -20px;">
+                <h1> Inicio de sesión </h1>
+            </div>
+            <div>
+                <mat-form-field appearance="fill" class="ancho">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput placeholder="Ingrese su usario" formControlName="usuario">
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="ancho">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div>
+                <button type="submit" mat-raised-button class="animated-word ancho">
+                    Login <mat-icon>login</mat-icon></button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<ngx-spinner bdColor="rgba(0,35,59,0.5)" size="large" color="#fff" type="ball-scale-multiple" [fullScreen]="true">
+    <p style="color: white"> Validando... </p>
+</ngx-spinner>

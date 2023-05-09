@@ -1,0 +1,82 @@
+<mat-toolbar class="colorTool">
+    <span>Usuarios</span>
+</mat-toolbar>
+
+<div style="width: 80%; margin-left: auto; margin-right: auto;padding:50px;">
+
+    <button mat-raised-button color="primary" (click)="openDialog()">Agregar usuario</button>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin-top:10px;">
+        <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="idRol">
+            <th mat-header-cell *matHeaderCellDef> Rol </th>
+            <td mat-cell *matCellDef="let element"> {{element.idRol}} </td>
+        </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="documento">
+            <th mat-header-cell *matHeaderCellDef> Documento </th>
+            <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
+        </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="idTipoDocumento">
+            <th mat-header-cell *matHeaderCellDef> idTipoDocumento </th>
+            <td mat-cell *matCellDef="let element"> {{element.idTipoDocumento}} </td>
+        </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="telefono">
+            <th mat-header-cell *matHeaderCellDef> telefono </th>
+            <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+        </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="correo">
+            <th mat-header-cell *matHeaderCellDef> correo </th>
+            <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+        </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="usuarioSystem">
+            <th mat-header-cell *matHeaderCellDef> usuarioSystem </th>
+            <td mat-cell *matCellDef="let element"> {{element.usuarioSystem}} </td>
+        </ng-container>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="contrasena">
+            <th mat-header-cell *matHeaderCellDef> contrasena </th>
+            <td mat-cell *matCellDef="let element"> {{element.contrasena}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let element">
+                <mat-icon *ngIf="element.estado" class="material-icons color_green">check_circle</mat-icon>
+                <mat-icon *ngIf="!element.estado" class="material-icons color_red">cancel</mat-icon>
+            </td>
+        </ng-container>
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="editar">
+            <th mat-header-cell *matHeaderCellDef> Editar </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

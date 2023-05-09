@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+}
+table th{
+    background-color: #568baf; 
+    color: white;
+}
+.menuLateral{
+    background-color: #568baf;
+    color: white;
+    width: 100%;
+}

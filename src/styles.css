@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.colorTool{
+    background-color: #446d89; 
+    color: white;
+}
+.material-icons.color_green { color: #2bc26a !important; }
+.material-icons.color_red { color: #dc4739 !important; }

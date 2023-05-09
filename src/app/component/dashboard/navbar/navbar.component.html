@@ -1,0 +1,10 @@
+<mat-toolbar>
+    <img width="200" alt="Angular Logo" src="https://recorrido.ucompensar.edu.co/skin/Image_018C49C4_1D5D_33C9_41B8_A70BB6CD663A_es.png?v=1663705559729" style="padding: 10px;" />
+    <span>CRM Ucompensar</span>
+    <span class="example-spacer"></span>
+    <button *ngFor="let item of menu" mat-button [routerLink]="item.redirect" class="btn first">{{item.nombre}}</button>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>login</mat-icon>
+      </button>
+</mat-toolbar>
