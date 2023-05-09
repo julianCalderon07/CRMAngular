@@ -10,5 +10,13 @@
     {
         "nombre": "Reportes",
         "redirect": "/dashboard/reportes"
+    },
+    {
+        "nombre": "Peticiones",
+        "redirect": "/dashboard/peticiones"
+    },
+    {
+        "nombre": "Respuesta",
+        "redirect": "/dashboard/respuesta"
     }
 ]

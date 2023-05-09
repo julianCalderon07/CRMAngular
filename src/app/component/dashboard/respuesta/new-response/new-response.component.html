@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>Agregar respuesta</h1>
+<div mat-dialog-content>
+    <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Tipo de respuesta</mat-label>
+                        <input matInput>
+                        <mat-error>
+                            Respuesta es <strong>obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill" class="example-full-width">
+                        <mat-label>Descripción</mat-label>
+                        <input matInput>
+                        <mat-error>
+                            Descripcion es <strong>obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="saveData()">Agregar respuesta</button>
+    <button mat-button (click)="cancelar()">Cancelar</button>
+</div>
+<ngx-spinner bdColor="rgba(0,35,59,0.5)" size="large" color="#fff" type="ball-scale-multiple" [fullScreen]="true">
+    <p style="color: white"> Cargando... </p>
+</ngx-spinner>
